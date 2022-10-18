@@ -15,7 +15,7 @@ def creaTabla():
     conn.close()
 
 def insertarTabla():
-    id=input("ingrese ip: ")
+    id=input("ingrese id: ")
     marca=str(input("ingrese marca: "))
     precio=input("ingrese precio: ")
     cantidad=input("ingrese cantidad: ")
@@ -49,9 +49,10 @@ def cambiarPrecio():
     conn.close()
 
 def borrarMonopatin():
+    borrarId = input("Ingrese ID del monopatín a borrar: ")
     conn = sqlite3.connect('MONOPATINES.db')
     cursor = conn.cursor()
-    instruccion = f"DELETE FROM MONOPATINES WHERE id=123"
+    instruccion = f"DELETE FROM MONOPATINES WHERE id={borrarId}"
     cursor.execute(instruccion)
     conn.commit()
     conn.close()

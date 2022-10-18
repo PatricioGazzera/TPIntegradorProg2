@@ -15,7 +15,7 @@ def creaTabla():
     conn.close()
 
 def insertarTabla():
-    id=input("ingrese id: ")
+    id=input("ingrese precio: ")
     marca=str(input("ingrese marca: "))
     precio=input("ingrese precio: ")
     cantidad=input("ingrese cantidad: ")

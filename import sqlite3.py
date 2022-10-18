@@ -58,7 +58,7 @@ def borrarMonopatin():
 
 i=0
 while i == 0:
-    print("menu")
+    print("        Menu")
     print("1-Ingresar monopatin/es: ")
     print("2-Ver monopatin/es: ")
     print("3-Modificar precio: ")

@@ -14,7 +14,12 @@ def creaTabla():
     conn.commit()
     conn.close()
 
-def insertarTabla(id, marca, precio, cantidad, disponible):
+def insertarTabla():
+    id=input("ingrese ip: ")
+    marca=str(input("ingrese marca: "))
+    precio=input("ingrese precio: ")
+    cantidad=input("ingrese cantidad: ")
+    disponible=input("ingrese cantidad disponible: ")
     conn = sqlite3.connect('MONOPATINES.db')
     cursor = conn.cursor()
     instruccion = f"INSERT INTO MONOPATINES VALUES({id}, '{marca}', {precio}, {cantidad}, {disponible})"
@@ -34,9 +39,11 @@ def leerTabla():
 
 
 def cambiarPrecio():
+    buscar_por_id = input('ID del monopatin: ')
+    nuevoPrecio = input('Nuevo precio: ')
     conn = sqlite3.connect('MONOPATINES.db')
     cursor = conn.cursor()
-    instruccion = f"UPDATE MONOPATINES SET precio=5 WHERE id=123"
+    instruccion = f"UPDATE MONOPATINES SET precio={nuevoPrecio} WHERE id={buscar_por_id}"
     cursor.execute(instruccion)
     conn.commit()
     conn.close()
@@ -67,7 +74,3 @@ while i == 0:
         cambiarPrecio()
     elif opcion == 4:
         borrarMonopatin()
-
-
-
-
